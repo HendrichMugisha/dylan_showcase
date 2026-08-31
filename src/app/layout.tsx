@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anime Cult | Apparel & Art",
+  title: "KEEN | Apparel & Art",
   description: "Exclusive anime illustrations and print-on-demand streetwear.",
 };
 
@@ -30,12 +31,11 @@ export default function RootLayout({
         {/* Navigation Bar */}
         <header className="sticky top-0 z-50 w-full bg-[#050505]/80 backdrop-blur-xl border-b border-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <Link href="/" className="font-black text-3xl tracking-tighter text-white hover:text-accent transition-colors">
-              ANIMECULT<span className="text-accent">.</span>
+            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Image src="/images/LOGO.png" alt="KEEN Logo" width={120} height={40} className="object-contain h-10 w-auto" />
             </Link>
             
             <nav className="flex gap-8 items-center text-sm font-bold tracking-widest text-gray-300">
-              <Link href="/about" className="hover:text-white transition-colors">ABOUT</Link>
               <Link href="/#apparel" className="relative group cursor-pointer hover:text-white transition-colors">
                 APPAREL
                 <span className="absolute -top-3 -right-6 text-[10px] font-black tracking-widest text-black bg-accent px-1.5 py-0.5 rounded-sm shadow-[0_0_10px_rgba(255,42,95,0.5)]">
@@ -47,7 +47,7 @@ export default function RootLayout({
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <main className="flex-1 w-full flex flex-col">
           {children}
         </main>
 
@@ -79,7 +79,7 @@ export default function RootLayout({
 
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 border-t border-gray-900 flex justify-between items-center text-xs text-gray-600 font-bold tracking-widest uppercase">
-            <p>&copy; {new Date().getFullYear()} ANIMECULT. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} KEEN. All rights reserved.</p>
           </div>
         </footer>
 

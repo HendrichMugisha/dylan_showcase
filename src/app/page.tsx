@@ -4,21 +4,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
-// Anime & Apparel Dummy data with reliable placeholders
-const artworks = [
-  { id: '1', title: 'Cyber Ronin Tee', image: 'https://picsum.photos/seed/anime1/800/1000', tall: true, category: 'Apparel' },
-  { id: '2', title: 'Neo Tokyo Grid', image: 'https://picsum.photos/seed/anime2/800/800', tall: false, category: 'Illustration' },
-  { id: '3', title: 'Mech Pilot Hoodie', image: 'https://picsum.photos/seed/anime3/800/800', tall: false, category: 'Apparel' },
-  { id: '4', title: 'Crimson Akuma', image: 'https://picsum.photos/seed/anime4/800/1000', tall: true, category: 'Illustration' },
-  { id: '5', title: 'Street Punk Longsleeve', image: 'https://picsum.photos/seed/anime5/800/1000', tall: true, category: 'Apparel' },
-  { id: '6', title: 'Digital Ghost', image: 'https://picsum.photos/seed/anime6/800/800', tall: false, category: 'Illustration' },
+// The JJK Collection Data
+const jjkCollection = [
+  { id: '1', title: 'JJK Maki Zenin Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Maki Zenin1.webp', hover: '/images/Maki Zenin2.webp' },
+  { id: '2', title: 'JJK Okkotsu Yuuta Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Okkotsu Yuuta1.webp', hover: '/images/Okkotsu Yuuta2.webp' },
+  { id: '3', title: 'JJK Suguru Geto Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Suguru Geto1.webp', hover: '/images/Suguru Geto2.webp' },
+  { id: '4', title: 'JJK Toji Fushiguro Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Toji Fushiguro1.webp', hover: '/images/Toji Fushiguro2.webp' },
+];
+
+const testimonials = [
+  { text: "The fabric weight is perfect. Feels exactly like a premium 240 GSM tee should.", author: "Karan S." },
+  { text: "Incredible print quality and the oversized fit is spot on. Definitely my new favorite shirt.", author: "Anjali T." },
+  { text: "No AI BS here. You can tell real effort went into the custom design. Looks sick! 🔥", author: "Rohan V." }
 ];
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
   }
 };
 
@@ -29,91 +33,138 @@ const letterVariants: Variants = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-32">
-      {/* Hero Section */}
-      <section className="relative w-full h-[80vh] min-h-[600px] bg-black flex items-center justify-center overflow-hidden rounded-xl">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://picsum.photos/seed/hero/2000/1200"
-            alt="Hero anime artwork"
-            fill
-            className="object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-1000"
-            priority
-          />
+    <div className="flex flex-col gap-20">
+      
+      {/* Video Hero Section */}
+      <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-black">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="https://cdn.shopify.com/videos/c/o/v/482d352067bf4566aa497b8383d51e46.mp4" type="video/mp4" />
+          </video>
         </div>
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-transparent to-black/80" />
+        
+        {/* Dark Shadow Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/50" />
         
         <div className="relative z-20 text-center px-4 flex flex-col items-center">
           <motion.h1 
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-7xl md:text-[9rem] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-gray-500 uppercase leading-none drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] flex flex-col items-center"
+            className="text-7xl md:text-[10rem] font-black tracking-tighter text-white uppercase drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)] flex overflow-hidden"
           >
-            <div className="flex overflow-hidden">
-              {"NEO".split('').map((char, index) => (
-                <motion.span key={index} variants={letterVariants}>{char}</motion.span>
-              ))}
-            </div>
-            <div className="flex overflow-hidden text-accent drop-shadow-[0_0_30px_rgba(255,42,95,0.4)]">
-              {"TOKYO".split('').map((char, index) => (
-                <motion.span key={index} variants={letterVariants}>{char}</motion.span>
-              ))}
-            </div>
+            {"KEEN".split('').map((char, index) => (
+              <motion.span key={index} variants={letterVariants}>{char}</motion.span>
+            ))}
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
-            className="mt-6 text-xl md:text-2xl font-bold tracking-widest text-white uppercase bg-black/50 px-6 py-2 rounded-sm backdrop-blur-sm border border-gray-800"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="mt-6"
           >
-            Premium Anime Apparel & Prints
-          </motion.p>
+            <Link href="#apparel" className="bg-accent text-white px-10 py-4 font-black tracking-widest uppercase hover:bg-white hover:text-black transition-colors shadow-xl">
+              The JJK Collection
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* Apparel Grid */}
-      <section id="apparel">
+      {/* Marquee Banner */}
+      <div className="w-full bg-[#111] border-y border-gray-900 py-3 overflow-hidden flex whitespace-nowrap relative">
         <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex justify-between items-end mb-12 border-b border-gray-900 pb-4"
+          animate={{ x: [0, -1000] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          className="flex gap-16 items-center text-accent font-black tracking-widest text-sm uppercase"
         >
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase text-white">Latest Drops</h2>
-          <span className="text-sm text-accent font-bold tracking-widest animate-pulse">LIVE NOW</span>
+          <span>🔥 CUSTOM AUTHENTIC DESIGNS</span>
+          <span>⚡ 100% SUPER COMBED COTTON</span>
+          <span>🔥 240 GSM HEAVYWEIGHT</span>
+          <span>⚡ UNISEX OVERSIZED FIT</span>
+          <span>🔥 NO AI BS</span>
+          <span>⚡ BIO-WASHED SOFTNESS</span>
+          <span>🔥 CUSTOM AUTHENTIC DESIGNS</span>
+          <span>⚡ 100% SUPER COMBED COTTON</span>
+          <span>🔥 240 GSM HEAVYWEIGHT</span>
+          <span>⚡ UNISEX OVERSIZED FIT</span>
+          <span>🔥 NO AI BS</span>
         </motion.div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {artworks.map((art, i) => (
+      {/* The JJK Collection Section */}
+      <section id="apparel" className="px-4 md:px-0 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase text-white mb-2">The JJK Collection</h2>
+          <div className="w-16 h-1 bg-accent"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          {jjkCollection.map((art, i) => (
             <motion.div 
               key={art.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
+              transition={{ delay: i * 0.1, duration: 0.4 }}
+              className="group flex flex-col gap-3"
             >
-              <Link href={`/artwork/${art.id}`} className="group flex flex-col gap-4">
-                <div className={`relative w-full overflow-hidden bg-[#111] rounded-sm border border-gray-900 group-hover:border-accent transition-colors ${art.tall ? 'aspect-[3/4]' : 'aspect-square'}`}>
-                  <Image
-                    src={art.image}
-                    alt={art.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                  />
-                  <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 text-xs font-bold tracking-widest uppercase border border-gray-800 text-white">
-                    {art.category}
-                  </div>
-                </div>
-                <div className="flex justify-between items-center px-1">
-                  <h3 className="font-bold text-xl uppercase tracking-tight text-gray-200 group-hover:text-white transition-colors">{art.title}</h3>
-                  <span className="text-xs font-black tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 duration-300">EXPLORE &rarr;</span>
+              <Link href={`/artwork/${art.id}`} className="relative w-full aspect-[3/4] overflow-hidden bg-[#111] rounded-sm border border-gray-900 group-hover:border-accent transition-colors">
+                <Image
+                  src={art.image}
+                  alt={art.title}
+                  fill
+                  className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+                />
+                <Image
+                  src={art.hover}
+                  alt={`${art.title} hover`}
+                  fill
+                  className="object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 scale-105"
+                />
+                <div className="absolute top-2 left-2 bg-accent text-white px-2 py-1 text-[10px] font-black tracking-widest uppercase shadow-md">
+                  NEW
                 </div>
               </Link>
+              <div className="flex flex-col items-center text-center mt-2">
+                <Link href={`/artwork/${art.id}`} className="font-bold text-sm md:text-base tracking-tight hover:text-accent transition-colors line-clamp-1">{art.title}</Link>
+                <div className="flex gap-2 items-center mt-1">
+                  <span className="text-gray-500 line-through text-sm font-medium">{art.originalPrice}</span>
+                  <span className="text-white font-black text-lg">{art.price}</span>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
+
+      {/* Testimonials */}
+      <section className="px-4 md:px-0 mb-20 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="text-3xl font-black tracking-tighter uppercase text-white mb-2">Customers are saying</h2>
+          <div className="w-16 h-1 bg-accent"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-[#111] p-8 border border-gray-900 text-center flex flex-col items-center gap-4 hover:border-accent transition-colors rounded-sm">
+              <div className="flex gap-1 text-accent">
+                {/* 5 Stars */}
+                {[...Array(5)].map((_, idx) => (
+                  <svg key={idx} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" /></svg>
+                ))}
+              </div>
+              <p className="text-gray-300 font-medium italic">"{t.text}"</p>
+              <span className="font-black tracking-widest text-xs uppercase text-white mt-auto pt-4">{t.author}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }
