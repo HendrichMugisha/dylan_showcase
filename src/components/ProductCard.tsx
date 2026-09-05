@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 
 export default function ProductCard({ item, index }: { item: any; index: number }) {
@@ -12,9 +12,17 @@ export default function ProductCard({ item, index }: { item: any; index: number 
   const isInView = useInView(ref, { margin: "-40% 0px -40% 0px" });
   
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile(); // Check immediately on mount
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Show alternate image if hovered (desktop) or in center of viewport (mobile/scroll)
-  const showAlternate = isHovered || isInView;
+  const showAlternate = isHovered || (isMobile && isInView);
 
   return (
     <motion.div 
