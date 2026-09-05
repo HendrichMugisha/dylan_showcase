@@ -24,8 +24,8 @@ export default function About() {
           </p>
           <div className="mt-8 flex flex-col gap-2">
             <span className="font-black tracking-widest text-sm text-accent uppercase">Contact</span>
-            <a href="mailto:hello@keen.placeholder" className="font-bold text-xl text-white hover:text-gray-300 transition-colors">
-              hello@keen.placeholder
+            <a href="mailto:dylanjeranyama12@gmail.com" className="font-bold text-xl text-white hover:text-gray-300 transition-colors">
+              dylanjeranyama12@gmail.com
             </a>
           </div>
         </div>

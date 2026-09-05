@@ -75,6 +75,7 @@ export default function RootLayout({
               <a href="#" className="hover:text-accent transition-colors">INSTAGRAM</a>
               <a href="#" className="hover:text-accent transition-colors">TWITTER</a>
               <a href="#" className="hover:text-accent transition-colors">DISCORD</a>
+              <a href="mailto:dylanjeranyama12@gmail.com" className="hover:text-accent transition-colors mt-4 text-white">EMAIL US</a>
             </div>
 
           </div>
