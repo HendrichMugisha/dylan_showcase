@@ -6,10 +6,10 @@ import { motion, Variants } from "framer-motion";
 
 // The JJK Collection Data
 const jjkCollection = [
-  { id: '1', title: 'JJK Maki Zenin Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Maki Zenin1.webp', hover: '/images/Maki Zenin2.webp' },
-  { id: '2', title: 'JJK Okkotsu Yuuta Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Okkotsu Yuuta1.webp', hover: '/images/Okkotsu Yuuta2.webp' },
-  { id: '3', title: 'JJK Suguru Geto Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Suguru Geto1.webp', hover: '/images/Suguru Geto2.webp' },
-  { id: '4', title: 'JJK Toji Fushiguro Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Toji Fushiguro1.webp', hover: '/images/Toji Fushiguro2.webp' },
+  { id: '1', title: 'JJK Maki Zenin Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Maki Zenin2.webp', hover: '/images/Maki Zenin1.webp' },
+  { id: '2', title: 'JJK Okkotsu Yuuta Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Okkotsu Yuuta3.webp', hover: '/images/Okkotsu Yuuta1.webp' },
+  { id: '3', title: 'JJK Suguru Geto Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Suguru Geto2.webp', hover: '/images/Suguru Geto1.webp' },
+  { id: '4', title: 'JJK Toji Fushiguro Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Toji Fushiguro2.webp', hover: '/images/Toji Fushiguro1.webp' },
 ];
 
 const testimonials = [
