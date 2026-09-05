@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import ProductCard from "@/components/ProductCard";
 
 // The JJK Collection Data
 const jjkCollection = [
@@ -106,39 +107,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {jjkCollection.map((art, i) => (
-            <motion.div 
-              key={art.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="group flex flex-col gap-3"
-            >
-              <Link href={`/artwork/${art.id}`} className="relative w-full aspect-[3/4] overflow-hidden bg-[#111] rounded-sm border border-gray-900 group-hover:border-accent transition-colors">
-                <Image
-                  src={art.image}
-                  alt={art.title}
-                  fill
-                  className="object-cover transition-opacity duration-500 group-hover:opacity-0"
-                />
-                <Image
-                  src={art.hover}
-                  alt={`${art.title} hover`}
-                  fill
-                  className="object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 scale-105"
-                />
-                <div className="absolute top-2 left-2 bg-accent text-white px-2 py-1 text-[10px] font-black tracking-widest uppercase shadow-md">
-                  NEW
-                </div>
-              </Link>
-              <div className="flex flex-col items-center text-center mt-2">
-                <Link href={`/artwork/${art.id}`} className="font-bold text-sm md:text-base tracking-tight hover:text-accent transition-colors line-clamp-1">{art.title}</Link>
-                <div className="flex gap-2 items-center mt-1">
-                  <span className="text-gray-500 line-through text-sm font-medium">{art.originalPrice}</span>
-                  <span className="text-white font-black text-lg">{art.price}</span>
-                </div>
-              </div>
-            </motion.div>
+            <ProductCard key={art.id} item={art} index={i} />
           ))}
         </div>
       </section>
