@@ -9,7 +9,7 @@ import ProductCard from "@/components/ProductCard";
 const jjkCollection = [
   { id: '1', title: 'JJK Maki Zenin Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Maki Zenin3.webp', hover: '/images/Maki Zenin1.webp' },
   { id: '2', title: 'JJK Okkotsu Yuuta Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Okkotsu Yuuta2.webp', hover: '/images/Okkotsu Yuuta1.webp' },
-  { id: '3', title: 'JJK Suguru Geto Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Suguru Geto3.webp', hover: '/images/Suguru Geto1.webp' },
+  { id: '3', title: 'JJK Suguru Geto Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Suguru Geto2.webp', hover: '/images/Suguru Geto1.webp' },
   { id: '4', title: 'JJK Toji Fushiguro Oversized T-shirt', price: '₹799', originalPrice: '₹1200', image: '/images/Toji Fushiguro3.webp', hover: '/images/Toji Fushiguro1.webp' },
 ];
 

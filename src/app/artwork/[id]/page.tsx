@@ -19,7 +19,7 @@ const descriptionHTML = `
 const jjkCollection = [
   { id: '1', title: 'JJK Maki Zenin Oversized T-shirt', price: '₹799', originalPrice: '₹1200', images: ['/images/Maki Zenin3.webp', '/images/Maki Zenin1.webp', '/images/Maki Zenin2.webp'], category: 'Apparel', collection: 'The JJK Collection' },
   { id: '2', title: 'JJK Okkotsu Yuuta Oversized T-shirt', price: '₹799', originalPrice: '₹1200', images: ['/images/Okkotsu Yuuta2.webp', '/images/Okkotsu Yuuta1.webp', '/images/Okkotsu Yuuta3.webp'], category: 'Apparel', collection: 'The JJK Collection' },
-  { id: '3', title: 'JJK Suguru Geto Oversized T-shirt', price: '₹799', originalPrice: '₹1200', images: ['/images/Suguru Geto3.webp', '/images/Suguru Geto1.webp', '/images/Suguru Geto2.webp'], category: 'Apparel', collection: 'The JJK Collection' },
+  { id: '3', title: 'JJK Suguru Geto Oversized T-shirt', price: '₹799', originalPrice: '₹1200', images: ['/images/Suguru Geto2.webp', '/images/Suguru Geto1.webp', '/images/Suguru Geto3.webp'], category: 'Apparel', collection: 'The JJK Collection' },
   { id: '4', title: 'JJK Toji Fushiguro Oversized T-shirt', price: '₹799', originalPrice: '₹1200', images: ['/images/Toji Fushiguro3.webp', '/images/Toji Fushiguro1.webp', '/images/Toji Fushiguro2.webp'], category: 'Apparel', collection: 'The JJK Collection' },
 ];
 
