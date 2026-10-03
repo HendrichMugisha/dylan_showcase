@@ -74,6 +74,7 @@ export default function RootLayout({
             <div className="flex flex-col gap-4 text-sm font-bold tracking-widest text-gray-500">
               <a href="#" className="hover:text-accent transition-colors">INSTAGRAM</a>
               <a href="#" className="hover:text-accent transition-colors">TWITTER</a>
+              <a href="https://wa.me/27680425961" className="hover:text-accent transition-colors">WHATSAPP</a>
               <a href="#" className="hover:text-accent transition-colors">DISCORD</a>
               <a href="mailto:dylanjeranyama12@gmail.com" className="hover:text-accent transition-colors mt-4 text-white">EMAIL US</a>
             </div>
